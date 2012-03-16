@@ -39,7 +39,7 @@ exports.donor = function(req, res) {
 
 exports.clear = function(req, res) {
 	donors = [];
-	res.send({ cleared: true });
+	res.send({ cleared: true, donors: donors.length });
 }
 
 getDonor = function() {
