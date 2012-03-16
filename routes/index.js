@@ -18,8 +18,10 @@ exports.donors = function(req, res){
 
 	donors.splice(0, 0, newDonor);
 	
-  res.contentType('application/json');
-	res.send({ donors: donors });
+  res.header('Access-Control-Allow-Origin', '*');
+	res.header("Access-Control-Allow-Headers", "X-Requested-With"); 
+	res.contentType('application/json');
+  res.send({ donors: donors });
 };
 
 /*
@@ -30,6 +32,7 @@ exports.donor = function(req, res) {
 	var newDonor = getDonor();
 
 	res.header('Access-Control-Allow-Origin', '*');
+	res.header("Access-Control-Allow-Headers", "X-Requested-With"); 
 	res.contentType('application/json');
 	res.send({ donor: newDonor });
 };
