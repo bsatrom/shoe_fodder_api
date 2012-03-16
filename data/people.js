@@ -34,6 +34,10 @@ exports.people = function () {
 	{
 		name: 'Mike Taylor',
 		avatar: 'https://twimg0-a.akamaihd.net/profile_images/1042621997/mikeyyyy.png'
+	},
+	{
+		name: 'Brohn Jistowe',
+		avatar: '/img/people/brohnJistowe.jpg'
 	}
 ];
 };
