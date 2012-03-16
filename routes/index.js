@@ -37,6 +37,11 @@ exports.donor = function(req, res) {
 	res.send({ donor: newDonor });
 };
 
+exports.clear = function(req, res) {
+	donors = [];
+	res.send({ cleared: true });
+}
+
 getDonor = function() {
 	var donor = {
 		donation: Math.floor(Math.random()*251)

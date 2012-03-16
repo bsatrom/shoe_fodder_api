@@ -32,6 +32,7 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.all('/donors.json', routes.donors);
 app.all('/donor.json', routes.donor);
+app.get('clear', routes.clear);
 
 var port = process.env.PORT || 3000;
 
