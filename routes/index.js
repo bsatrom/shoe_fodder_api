@@ -16,6 +16,8 @@ exports.index = function(req, res){
 exports.donors = function(req, res){
   var newDonor = getDonor();
 
+	donors.splice(0, 0, newDonor);
+	
   res.contentType('application/json');
 	res.send({ data: donors });
 };
@@ -26,8 +28,6 @@ exports.donors = function(req, res){
 
 exports.donor = function(req, res) {
 	var newDonor = getDonor();
-
-	donors.splice(0, 0, newDonor);
 
 	res.header('Access-Control-Allow-Origin', '*');
 	res.contentType('application/json');
