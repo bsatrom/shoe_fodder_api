@@ -19,7 +19,7 @@ exports.donors = function(req, res){
 	donors.splice(0, 0, newDonor);
 	
   res.contentType('application/json');
-	res.send({ data: donors });
+	res.send({ donors: donors });
 };
 
 /*
@@ -31,7 +31,7 @@ exports.donor = function(req, res) {
 
 	res.header('Access-Control-Allow-Origin', '*');
 	res.contentType('application/json');
-	res.send({ data: newDonor });
+	res.send({ donor: newDonor });
 };
 
 getDonor = function() {
