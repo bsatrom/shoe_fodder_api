@@ -20,6 +20,19 @@ exports.donors = function(req, res){
 	res.send({ data: donors });
 };
 
+/*
+ * GET a single donor
+ */
+
+exports.donor = function(req, res) {
+	var newDonor = getDonor();
+
+	donors.splice(0, 0, newDonor);
+
+	res.contentType('application/json');
+	res.send({ data: newDonor });
+};
+
 getDonor = function() {
 	var donor = {
 		donation: Math.floor(Math.random()*251)
@@ -30,5 +43,5 @@ getDonor = function() {
 	donor.name = person.name;
 	donor.avatar = person.avatar;
 
-	donors.push(donor);
+	return donor;
 }
