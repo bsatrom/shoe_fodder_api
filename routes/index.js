@@ -14,14 +14,14 @@ exports.index = function(req, res){
  */
 
 exports.donors = function(req, res){
-  var newDonor = getDonor();
+    var newDonor = getDonor();
 
 	donors.splice(0, 0, newDonor);
-	
-  res.header('Access-Control-Allow-Origin', '*');
+
+    res.header('Access-Control-Allow-Origin', '*'); // CORS!!!! 
 	res.header("Access-Control-Allow-Headers", "X-Requested-With"); 
 	res.contentType('application/json');
-  res.send({ donors: donors });
+    res.send({ donors: donors });
 };
 
 /*
